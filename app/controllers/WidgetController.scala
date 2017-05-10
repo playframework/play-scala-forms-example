@@ -4,8 +4,8 @@ import javax.inject.Inject
 
 import models.Widget
 import play.api.data._
-import play.api.i18n.I18nSupport
-import play.api.mvc.{AbstractController, AnyContent, ControllerComponents, Request}
+import play.api.i18n._
+import play.api.mvc._
 
 /**
  * The classic WidgetController using I18nSupport.
@@ -13,7 +13,7 @@ import play.api.mvc.{AbstractController, AnyContent, ControllerComponents, Reque
  * I18nSupport provides implicits that create a Messages instances from
  * a request using implicit conversion.
  */
-class WidgetController @Inject()(cc: ControllerComponents) extends AbstractController(cc) with I18nSupport {
+class WidgetController @Inject()(val messagesApi: MessagesApi) extends Controller with I18nSupport {
   import WidgetForm._
 
   private val widgets = scala.collection.mutable.ArrayBuffer(

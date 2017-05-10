@@ -1,8 +1,10 @@
 name := """play-scala-forms-example"""
 
-version := "2.6.x"
+version := "2.5.x"
 
-scalaVersion := "2.12.2"
+scalaVersion := "2.11.11"
+
+libraryDependencies += filters
 
 lazy val root = (project in file(".")).enablePlugins(PlayScala)
 
