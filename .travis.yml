@@ -15,3 +15,6 @@ before_cache:
 - rm -rf $HOME/.ivy2/cache/com.typesafe.play/*
 - rm -rf $HOME/.ivy2/cache/scala_*/sbt_*/com.typesafe.play/*
 - find $HOME/.ivy2/cache -name "ivydata-*.properties" -print0 | xargs -n10 -0 rm
+notifications:
+  slack:
+    secure: GMeqtEyV2bt7nOvW2xWF/Y5cG4j9Xqv/EaFMi2sW6KFC01uJo3oshMKuurnvFby/hwTw+iVm9gZ7UD/2xal92YTok39uawcR4RVKH1yTWTv1Da0AcOOl4XvGYfRKFTDglqtVBXa8OKit0bfLtnmWcQAAe8X5HKLHNZT0OgBt3trFBYblIHgqKalzN3bAdTiKw3GQ72ynFNJePWYn1fkIOc+7ofAtTFB8je/OuvJzsg7VEzTssF2YiMkBjlwl4qDt2i9R81072IGvS1FR9U2ZrGtWEF/XnflEDeFH3r8T34tvvEysHbE0IsxqYjzcZROm3OZe4/uesWHdSER2V/4JQertPYEruEDuiL0Hvhm5XT62dWcMW8tX7Efqm0sBrQSCNotF7j2cfy0ZlB8cVdfe189UJL4UtTuxQGogMozxjIthQVzgRyK6Bakb12b7yz0xdsHX0YyLRfXvGzE+QP+mn/DT2fnqnw6vMA0LPf24f2pIDi1MrDDL5hbvirw5MF9lSALxTXfKi7ZLpuhXEvb4luvSlD2FEMIABfnU/JLdn/RtIt+871Z+eywCAVMvfjAJUuIZZSW1V0AtFZClYCbAc2ksSIXWQGJPLIElDGztzIsroacvFE5HLuLoPmmmyDyovOD5YugIpPmYGJMoDjuBVUeZxMjY1aAreea2jBtSzns=
