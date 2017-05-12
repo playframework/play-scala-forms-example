@@ -1,8 +1,14 @@
-@(widgets: Seq[Widget], form: Form[Widget], postUrl: Call)(implicit request: RequestHeader, messages: Messages)
+@(widgets: Seq[Widget], form: Form[WidgetForm.Data], postUrl: Call)(implicit request: RequestHeader, messages: Messages)
 
 @main("Widgets") {
 
   <h1>Widgets</h1>
+
+  @* Flash shows updates to a page *@
+  @request.flash.data.foreach{ case (name, value) =>
+    <div class="@name">@value</div>
+  }
+
   <table>
     <thead>
       <tr><th>Name</th><th>Price</th>
@@ -15,6 +21,15 @@
   </table>
 
   <hr/>
+
+  @* Global errors are not tied to any particular form field *@
+  @if(form.hasGlobalErrors) {
+    @form.globalErrors.foreach { error: FormError =>
+      <div>
+        @error.key: @error.message
+      </div>
+    }
+  }
 
   @helper.form(postUrl) {
     @helper.CSRF.formField
